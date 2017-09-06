@@ -2,15 +2,15 @@ class App extends React.Component {
   constructor(props){
     super(props);
     console.log(props, "app props")
- 	this.componentDidMount = this.componentDidMount.bind(this)
+ 	this.onClickEvent = this.onClickEvent.bind(this)
 
     this.state = {
       selected: "",
-      messages: [],
+      messages: [1,2,3],
    	}
   }
 
-  componentDidMount(){
+  onClickEvent(){
   	var context = this;
   	$.ajax({
     // This is the url you should use to communicate with the parse API server.
@@ -62,7 +62,7 @@ class App extends React.Component {
       <div>
         <nav className="navbar">
           <div className="col-md-6 offset-md-3">
-            <Submit  onClick={this.componentDidMount}/>
+            <Submit  onClick={this.onClickEvent}/>
           </div>
         </nav>
         <div className="row">
@@ -70,7 +70,7 @@ class App extends React.Component {
             <MessageList messages={this.state.messages}/>
           </div>
           <div className="col-md-5">
-            <MessageList/>
+            <MessageList messages={this.state.messages}/>
           </div>
         </div>
       </div>
