@@ -2,7 +2,7 @@ var MessageListEntry = (props) => (
   console.log(props, "mle props yoo"),
   <div className="video-list-entry media">
     <div className="media-body">
-      <div className="video-list-entry-detail">Test message in Message list entry works</div>
+      <div className="video-list-entry-detail"><span className="username">{props.message.username}</span> {_.escape(props.message.text)}</div>
     </div>
   </div>
 ); 
