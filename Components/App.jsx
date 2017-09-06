@@ -6,7 +6,7 @@ class App extends React.Component {
 
     this.state = {
       selected: "",
-      messages: [1,2,3],
+      messages: [],
    	}
   }
 
@@ -67,7 +67,7 @@ class App extends React.Component {
         </nav>
         <div className="row">
           <div className="col-md-7">
-            <MessageList messages={this.state.messages}/>
+            <RoomMessages messages={this.state.messages}/>
           </div>
           <div className="col-md-5">
             <MessageList messages={this.state.messages}/>
