@@ -1,7 +1,7 @@
 class Submit extends React.Component {
   constructor(props) {
     super(props);
-
+    console.log(props, "submit props");
     this.state = {
       value: ''
     }
@@ -15,7 +15,7 @@ class Submit extends React.Component {
           			className="form-control"
           			type="text"
         		/>
-        		<button className="btn hidden-sm-down">
+        		<button className="btn hidden-sm-down" onClick={this.props.onClick}>
           			<span className="glyphicon glyphicon-search"></span>
         		</button>
       		</div>
