@@ -10,11 +10,7 @@ class Submit extends React.Component {
     render(){
     	return (
       		<div className="search-bar form-inline">
-      			Submit button should be here
-      			<input
-          			className="form-control"
-          			type="text"
-        		/>
+      			Click to see messages
         		<button className="btn hidden-sm-down" onClick={this.props.onClick}>
           			<span className="glyphicon glyphicon-search"></span>
         		</button>

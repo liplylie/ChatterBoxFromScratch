@@ -17,7 +17,7 @@ var RoomMessages = (props) => {
 	return (
 	  <div className="video-list">
 	  Rooms
-	    { uniqBox.map(room => <RoomMessagesEntry room={room}/>)}
+	    { uniqBox.map(room => <RoomMessagesEntry room={room} />)}
 
 	  </div>
 
