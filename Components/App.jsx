@@ -56,8 +56,9 @@ class App extends React.Component {
       data: text,
       success: function (data) {
         console.log(data, "send data")
+        context.state.messages.unshift(text);
         context.setState({
-          messages: data.results
+          
         })
       },
       error: function (error) {

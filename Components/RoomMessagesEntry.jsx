@@ -4,7 +4,7 @@ var RoomMessagesEntry = (props) => {
 
 
 
-  console.log(props, "mle props yoo");
+  console.log(props, "RoomMessagesEntry props yoo");
   return (
   <div className="video-list-entry media">
     <div className="media-body">
