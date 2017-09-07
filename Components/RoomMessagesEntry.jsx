@@ -3,6 +3,7 @@ var RoomMessagesEntry = (props) => {
 
 	var textInput = function(event){
 	    console.log('Input is ' + event.target.innerHTML) 
+	    props.onClick(event.target.innerHTML)
 	  }
 
 

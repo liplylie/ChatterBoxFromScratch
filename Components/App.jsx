@@ -68,7 +68,7 @@ class App extends React.Component {
   }
 
 
-  renderByRoom(){
+  renderByRoom(room){
   	var context = this;
   	$.ajax({
     // This is the url you should use to communicate with the parse API server.
@@ -85,16 +85,24 @@ class App extends React.Component {
         //console.log(, "data i")
         console.log(data.results, "data in search api");
         var messageArr = [];
+        console.log(messageArr, "message arrrrr")
         for ( var i = 0; i < data.results.length; i ++) {
           // string for username and test
-          var userName = data.results[i].username;
-          var text = data.results[i].text;
-          var time = data.results[i].updatedAt;
-          messageArr.push([userName,text,time]);
+          if ( data.results[i].roomname === room){
+            var userName = data.results[i].username;
+            var text = data.results[i].text;
+            // var time = data.results[i].updatedAt;
+            var message = {
+              username: userName,
+              text: text,
+              roomname: room
+            };
+            messageArr.push(message);
+          }
         }
-        context.setState({
-        	messages: messageArr
-        })
+            context.setState({
+              messages: messageArr
+            })
       },
       
       error: function (data) {
