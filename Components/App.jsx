@@ -22,7 +22,7 @@ class App extends React.Component {
       data: 'order=-createdAt',
       headers: {
         'X-Parse-Application-Id': '676a1e781a66c09718a32a0221ea3a23a9080272',
-      'X-Parse-REST-API-Key': '848f43ff2d1f6d372a9779c6be185d11f18cc183',
+        'X-Parse-REST-API-Key': '848f43ff2d1f6d372a9779c6be185d11f18cc183',
       },
       contentType: 'application/json',
       success: function (data) {
@@ -49,7 +49,11 @@ class App extends React.Component {
     $.ajax({
       url: "http://parse.la.hackreactor.com/chatterbox/classes/messages",
       type: 'POST',
-      data: JSON.stringify(text),
+      headers: {
+        'X-Parse-Application-Id': '676a1e781a66c09718a32a0221ea3a23a9080272',
+        'X-Parse-REST-API-Key': '848f43ff2d1f6d372a9779c6be185d11f18cc183',
+      },
+      data: text,
       success: function (data) {
         console.log(data, "send data")
         context.setState({
